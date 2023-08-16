@@ -6,7 +6,7 @@
 
 
 
-
+/* 
 
 .ce-block--selected .ce-block__content,
 .ce-inline-toolbar,
@@ -30,10 +30,6 @@
   color: inherit;
 }
 
-/* ::selection {
-  background: #5a4865;
-} */
-
 .cdx-settings-button:hover,
 .ce-settings__button:hover,
 .ce-toolbox__button--active,
@@ -54,4 +50,6 @@
 .cdx-notify__cross::after,
 .cdx-notify__cross::before {
   background: red;
-}
+} 
+
+*/
