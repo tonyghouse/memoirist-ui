@@ -30,7 +30,7 @@ function Navbar({ sidebarInd, setSidebarInd }: INavbarProps) {
       <div
         className={` 
         border-border border rounded-sm 
-        flex flex-row justify-between items-center px-[0.4rem]  py-[0.4rem]`}>
+        flex flex-row justify-between items-center px-[0.4rem]  py-[0.5rem]`}>
         <div className="flex flex-row justify-start items-center gap-2">
            <BsLayoutSidebar  onClick={toggleSidebar} className="text-sm font-medium leading-none"/>
            <p className="text-sm font-medium leading-none">Memoirist</p>

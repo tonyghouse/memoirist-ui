@@ -1,6 +1,8 @@
 import React ,{useContext} from "react";
 import {LuCalendarDays} from "react-icons/lu";
 import {GiSandsOfTime} from "react-icons/gi";
+import {TbTemplate,TbDeviceTabletSearch} from "react-icons/tb";
+
 import { Separator } from "@/components/ui/separator";
 
 import {
@@ -73,11 +75,8 @@ function Sidebar({ setModuleId }: any) {
     >
       
       {modules.map((val: any) => {
-        return <div key={val.title} onClick={()=>changeModuleId(val.title)} 
-        // className="font-Inter w-[95%]   rounded-md  text-[0.6rem] leading-[0.9rem]
-        //   md:text-[0.9rem] md:leading-[1.25rem] font-[420] hover:bg-accent m-1 
-        //   " 
-          className="font-Inter w-[95%]  rounded-md m-1 text-base leading-none"
+        return <div key={val.title} onClick={()=>changeModuleId(val.title)}
+          className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent"
           >
           <LuCalendarDays className="inline mr-1"/>
         {val.title}
@@ -88,27 +87,18 @@ function Sidebar({ setModuleId }: any) {
       <Separator className="my-4" />
       
       <div key="momento-mori" onClick={()=>changeModuleId("momento-mori")} 
-         className="font-Inter w-[95%]   rounded-md  text-[0.6rem] leading-[0.9rem]
-         md:text-[0.9rem] md:leading-[1.25rem] font-[380] hover:bg-accent m-1 
-         py-[0.15rem] pl-1 my-[0.2rem] pr-6
-         md:py-[0.2rem] md:pl-3 md:my-[0.4rem] md:pr-14">
+         className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent">
        <GiSandsOfTime className="inline mr-1" /> Momento Mori
       </div>
       
       <div key="templates" onClick={()=>changeModuleId("templates")} 
-        className="font-Inter w-[95%]   rounded-md  text-[0.6rem] leading-[0.9rem]
-        md:text-[0.9rem] md:leading-[1.25rem] font-[380] hover:bg-accent m-1 
-        py-[0.15rem] pl-1 my-[0.2rem] pr-6
-        md:py-[0.2rem] md:pl-3 md:my-[0.4rem] md:pr-14">
-       Templates
+        className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent">
+        <TbTemplate className="inline mr-1" /> Templates
       </div>
       
       <div key="search" onClick={()=>changeModuleId("search")} 
-         className="font-Inter w-[95%]   rounded-md  text-[0.6rem] leading-[0.9rem]
-         md:text-[0.9rem] md:leading-[1.25rem] font-[380] hover:bg-accent m-1 
-         py-[0.15rem] pl-1 my-[0.2rem] pr-6
-         md:py-[0.2rem] md:pl-3 md:my-[0.4rem] md:pr-14">
-       Search
+         className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent">
+       <TbDeviceTabletSearch className="inline mr-1" />  Search
       </div>
     </div>
   );
