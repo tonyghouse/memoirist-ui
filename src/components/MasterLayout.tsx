@@ -6,7 +6,7 @@ import HomeSection from "./HomeSection";
 
 
 function MasterLayout() {
-    const [sidebarInd,setSidebarInd] = useState<boolean>(true);
+    const [sidebarInd,setSidebarInd] = useState<boolean>(false);
   return (
     <>
       <ErrorBoundary fallback={<ErrorPage />}>

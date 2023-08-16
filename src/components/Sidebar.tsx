@@ -1,7 +1,21 @@
-import React from "react";
+import React ,{useContext} from "react";
+import {LuCalendarDays} from "react-icons/lu";
+import {GiSandsOfTime} from "react-icons/gi";
 import { Separator } from "@/components/ui/separator";
 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
+
+import { IThemeContextType, ThemeContext } from "../context/ThemeContext";
+
 function Sidebar({ setModuleId }: any) {
+  const themeContext = useContext<IThemeContextType>(ThemeContext);
 
   const changeModuleId = (moduleId:string) => {
     setModuleId(moduleId);
@@ -51,35 +65,51 @@ function Sidebar({ setModuleId }: any) {
   ];
   return (
     <div
-      className="my-2 mr-2 border-[0.07rem] md:border-[0.09rem]  border-[black] rounded-lg 
-    h-full min-h-[100vh] min-w-[30%]  md:min-w-[15%]   flex flex-col items-center p-1 "
+      className={` 
+       border-border border rounded-sm 
+      my-2 mr-2 
+
+      h-full min-h-[100vh] min-w-fit  md:min-w-fit   flex flex-col items-center p-2`}
     >
-      {/* <div className="mb-1"> */}
+      
       {modules.map((val: any) => {
         return <div key={val.title} onClick={()=>changeModuleId(val.title)} 
-        className="relative w-[95%] h-[20%] p-1 m-1 rounded-md hover:bg-[#F4F4F5] text-[0.6rem]  md:text-sm text-ellipsis whitespace-normal">
+        // className="font-Inter w-[95%]   rounded-md  text-[0.6rem] leading-[0.9rem]
+        //   md:text-[0.9rem] md:leading-[1.25rem] font-[420] hover:bg-accent m-1 
+        //   " 
+          className="font-Inter w-[95%]  rounded-md m-1 text-base leading-none"
+          >
+          <LuCalendarDays className="inline mr-1"/>
         {val.title}
       </div>
       })}
-      {/* </div> */}
+   
 
       <Separator className="my-4" />
       
       <div key="momento-mori" onClick={()=>changeModuleId("momento-mori")} 
-        className="relative w-[95%] h-[20%] p-1 m-1 rounded-md hover:bg-[#F4F4F5] text-[0.6rem]   md:text-sm">
-       Momento Mori
+         className="font-Inter w-[95%]   rounded-md  text-[0.6rem] leading-[0.9rem]
+         md:text-[0.9rem] md:leading-[1.25rem] font-[380] hover:bg-accent m-1 
+         py-[0.15rem] pl-1 my-[0.2rem] pr-6
+         md:py-[0.2rem] md:pl-3 md:my-[0.4rem] md:pr-14">
+       <GiSandsOfTime className="inline mr-1" /> Momento Mori
       </div>
       
       <div key="templates" onClick={()=>changeModuleId("templates")} 
-        className="relative w-[95%] h-[20%] p-1 m-1 rounded-md hover:bg-[#F4F4F5] text-[0.6rem]   md:text-sm">
+        className="font-Inter w-[95%]   rounded-md  text-[0.6rem] leading-[0.9rem]
+        md:text-[0.9rem] md:leading-[1.25rem] font-[380] hover:bg-accent m-1 
+        py-[0.15rem] pl-1 my-[0.2rem] pr-6
+        md:py-[0.2rem] md:pl-3 md:my-[0.4rem] md:pr-14">
        Templates
       </div>
       
       <div key="search" onClick={()=>changeModuleId("search")} 
-        className="relative w-[95%] h-[20%] p-1 m-1 rounded-md hover:bg-[#F4F4F5] text-[0.6rem]   md:text-sm">
+         className="font-Inter w-[95%]   rounded-md  text-[0.6rem] leading-[0.9rem]
+         md:text-[0.9rem] md:leading-[1.25rem] font-[380] hover:bg-accent m-1 
+         py-[0.15rem] pl-1 my-[0.2rem] pr-6
+         md:py-[0.2rem] md:pl-3 md:my-[0.4rem] md:pr-14">
        Search
       </div>
-
     </div>
   );
 }

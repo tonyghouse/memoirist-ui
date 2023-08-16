@@ -11,6 +11,10 @@ module.exports = {
     container: {
       center: true,
       padding: "2rem",
+      fontFamily: {
+        monospace: ['Roboto Mono', 'monospace'],
+        Inter: ["Inter", "sans-serif"]
+      },
       screens: {
         "2xl": "1400px",
       },

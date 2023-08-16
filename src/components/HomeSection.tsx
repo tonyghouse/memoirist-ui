@@ -1,13 +1,24 @@
-import React, { useState } from "react";
+import React, { useState,useContext,useEffect } from "react";
 import Sidebar from "./Sidebar";
 import DateChooser from "./DateChooser";
+import CustomEditor from "./CustomEditor";
+
+import { IThemeContextType, ThemeContext } from "../context/ThemeContext";
 
 interface IHomeSectionProps {
   sidebarInd: boolean;
 }
 function HomeSection({ sidebarInd }: IHomeSectionProps) {
-
   const[moduleId,setModuleId] = useState<string|null>();
+  const themeContext = useContext<IThemeContextType>(ThemeContext);
+ 
+
+  
+
+
+  
+
+
 
   return (
     <>
@@ -18,12 +29,13 @@ function HomeSection({ sidebarInd }: IHomeSectionProps) {
         {sidebarInd && <Sidebar setModuleId={setModuleId} />}
 
         <div
-          className="my-2 border-[0.07rem] md:border-[0.09rem]  border-[black] rounded-lg 
-    h-full min-h-[100vh] w-full"
+          className={`
+          border-border border rounded-sm  
+          my-2 h-full min-h-[100vh] w-full`}
         >
-          {/* <DateChooser/> */}
-          home content of 
-          {moduleId}
+       
+       <CustomEditor/>
+
         </div>
       </div>
     </>
