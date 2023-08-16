@@ -1,100 +1,17 @@
 import React, { useState, useRef, useEffect } from "react";
  import "./CustomEditor.css";
-import {TbEdit} from "react-icons/tb";
+ import {EDITOR_JS_TOOLS} from "../config/editorJsToolsConfig"
+// import {TbEdit} from "react-icons/tb";
 import EditorJS from "@editorjs/editorjs";
-import Header from "@editorjs/header";
-// @ts-ignore
-import Paragraph from "@editorjs/paragraph";
-// @ts-ignore
-import Quote from "@editorjs/quote";
-// @ts-ignore
-import Warning from "@editorjs/Warning";
+
 // @ts-ignore
 import DragDrop from 'editorjs-drag-drop';
 // @ts-ignore
 import Undo from 'editorjs-undo';
-// @ts-ignore
-import ToggleBlock from 'editorjs-toggle-block';
-
-// @ts-ignore
-import AttachesTool from '@editorjs/attaches';
-
-// @ts-ignore
-import ImageTool from '@editorjs/image';
-
-// @ts-ignore
-import LinkTool from '@editorjs/link';
-
-// @ts-ignore
-import List from '@editorjs/list';
-
 
 import { data } from "../util/data";
 
-const editorJSToolsConfig = {
-  paragraph: {
-    class: Paragraph,
-    inlineToolbar: true,
-  },
-  header:Header,
 
-  quote: {
-    class: Quote,
-    inlineToolbar: true,
-    shortcut: 'CTRL+SHIFT+O',
-    config: {
-      quotePlaceholder: 'Enter a quote',
-      captionPlaceholder: 'Quote\'s author',
-    },
-  },
-
-  toggle: {
-    class: ToggleBlock,
-    inlineToolbar: false,
-  },
-
-  warning: {
-    class: Warning,
-    inlineToolbar: true,
-    shortcut: 'CTRL+SHIFT+W',
-    config: {
-      titlePlaceholder: 'Title',
-      messagePlaceholder: 'Message',
-    },
-
-    list: {
-      class: List,
-      inlineToolbar: true,
-      config: {
-        defaultStyle: 'unordered'
-      }
-    },
-
-    linkTool: {
-      class: LinkTool,
-      config: {
-        endpoint: 'http://localhost:8008/fetchUrl', // Your backend endpoint for url data fetching,
-      }
-    },
-
-    attaches: {
-      class: AttachesTool,
-      config: {
-        endpoint: 'http://localhost:8008/uploadFile'
-      }
-    },
-
-    image: {
-      class: ImageTool,
-      config: {
-        endpoints: {
-          byFile: 'http://localhost:8008/uploadFile', // Your backend file uploader endpoint
-          byUrl: 'http://localhost:8008/fetchUrl', // Your endpoint that provides uploading by Url
-        }
-      }
-    }
-  },
-};
 
 
 function CustomEditor() {
@@ -153,7 +70,7 @@ function CustomEditor() {
         //console.log(content);
       },
 
-      tools: editorJSToolsConfig,
+      tools: EDITOR_JS_TOOLS,
     });
     return editor;
   };
@@ -167,7 +84,7 @@ function CustomEditor() {
 
   return (
     <>
-    <div className="border rounded-lg w-full h-full relative">
+    <div className="border rounded-lg w-full h-full ">
 {/* 
     <div className ="border w-[30%] absolute z-[3]  text-right">
     <button onClick={toggleReadOnlyMode}>
@@ -178,7 +95,7 @@ function CustomEditor() {
       <div
         key="editorjs"
         id="editorjs"
-        className="w-full h-full absolute z-[2]"
+        className="w-full h-auto "
       ></div>
     </div>
     </>

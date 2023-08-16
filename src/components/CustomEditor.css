@@ -18,7 +18,7 @@
 .cdx-button,
 .ce-popover,
 .ce-toolbar__plus:hover {
-  background: #5a4865;
+  background: #919191;
   color: inherit;
 }
 
@@ -43,7 +43,7 @@
 .ce-inline-tool:hover,
 .ce-popover__item:hover,
 .ce-toolbar__settings-btn:hover {
-  background-color: #5a4865;
+  background-color: #919191;
   color: inherit;
 }
 
@@ -53,5 +53,5 @@
 
 .cdx-notify__cross::after,
 .cdx-notify__cross::before {
-  background: white;
+  background: red;
 }

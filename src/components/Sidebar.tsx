@@ -33,35 +33,35 @@ function Sidebar({ setModuleId }: any) {
       pageId: "-",
     },
     {
-      title: "28-01-2023",
+      title: "28 Jan 2023",
       pageId: "-",
     },
     {
-      title: "27-01-2023",
+      title: "27 Jan 2023",
       pageId: "-",
     },
     {
-      title: "26-01-2023",
+      title: "26 Jan 2023",
       pageId: "-",
     },
     {
-      title: "25-01-2023",
+      title: "25 Jan 2023",
       pageId: "-",
     },
     {
-      title: "24-01-2023",
+      title: "24 Jan 2023",
       pageId: "-",
     },
     {
-      title: "23-01-2023",
+      title: "23 Jan 2023",
       pageId: "-",
     },
     {
-      title: "22-01-2023",
+      title: "22 Jan 2023",
       pageId: "-",
     },
     {
-      title: "21-01-2023",
+      title: "21 Jan 2023",
       pageId: "-",
     },
   ];
@@ -71,14 +71,14 @@ function Sidebar({ setModuleId }: any) {
        border-border border rounded-sm 
       my-2 mr-2 
 
-      h-full min-h-[100vh] min-w-fit  md:min-w-fit   flex flex-col items-center p-2`}
+      h-auto min-h-[100vh] min-w-fit  md:min-w-fit   flex flex-col items-center p-2`}
     >
       
       {modules.map((val: any) => {
         return <div key={val.title} onClick={()=>changeModuleId(val.title)}
           className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent"
           >
-          <LuCalendarDays className="inline mr-1"/>
+          <LuCalendarDays className="inline mr-2"/>
         {val.title}
       </div>
       })}
@@ -88,17 +88,17 @@ function Sidebar({ setModuleId }: any) {
       
       <div key="momento-mori" onClick={()=>changeModuleId("momento-mori")} 
          className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent">
-       <GiSandsOfTime className="inline mr-1" /> Momento Mori
+       <GiSandsOfTime className="inline mr-2" /> Momento Mori
       </div>
       
       <div key="templates" onClick={()=>changeModuleId("templates")} 
         className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent">
-        <TbTemplate className="inline mr-1" /> Templates
+        <TbTemplate className="inline mr-2" /> Templates
       </div>
       
       <div key="search" onClick={()=>changeModuleId("search")} 
          className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent">
-       <TbDeviceTabletSearch className="inline mr-1" />  Search
+       <TbDeviceTabletSearch className="inline mr-2" />  Search
       </div>
     </div>
   );
