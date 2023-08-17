@@ -9,7 +9,7 @@ WORKDIR /app
 # COPY package-lock.json /app/package-lock.json
 COPY . /app
 
-RUN npm clean 
+RUN rm -rf node_modules
 
 RUN npm install -g typescript
 
