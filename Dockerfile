@@ -8,7 +8,7 @@ RUN npm install --legacy-peer-deps
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 0.0.0.0:8080
 # required for docker desktop port mapping
 
 CMD ["npm", "start"]
