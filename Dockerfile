@@ -9,6 +9,8 @@ WORKDIR /app
 # COPY package-lock.json /app/package-lock.json
 COPY . /app
 
+RUN npm clean 
+
 RUN npm install -g typescript
 
 RUN npm install --legacy-peer-deps
