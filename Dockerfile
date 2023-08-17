@@ -8,8 +8,6 @@ WORKDIR /app
 
 COPY . /app
 
-RUN npm clean --force
-
 RUN npm install -g typescript
 
 RUN npm install --legacy-peer-deps
