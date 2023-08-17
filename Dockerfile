@@ -4,7 +4,9 @@ ENV NODE_ENV=production
 
 WORKDIR /app
 
-COPY package.json .
+# COPY package.json .
+
+COPY . /app
 
 RUN npm clean --force
 
