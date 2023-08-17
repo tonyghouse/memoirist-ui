@@ -1,61 +1,71 @@
-import React, { Component, ErrorInfo, ReactNode } from "react";
+import React from 'react'
 
-interface Props {
-  children: ReactNode;
+function ErrorBoundary() {
+  return (
+    <div>ErrorBoundary</div>
+  )
 }
 
-interface State {
-  hasError: boolean;
-}
+export default ErrorBoundary
 
-class ErrorBoundary extends Component<Props, State> {
-  public state: State = {
-    hasError: false
-  };
+// import React, { Component, ErrorInfo, ReactNode } from "react";
 
-  public static getDerivedStateFromError(_: Error): State {
-    // Update state so the next render will show the fallback UI.
-    return { hasError: true };
-  }
-
-  public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("Uncaught error:", error, errorInfo);
-  }
-
-  public render() {
-    if (this.state.hasError) {
-      return <h1>Sorry.. there was an error</h1>;
-    }
-
-    return this.props.children;
-  }
-}
-
-
-
-// interface ErrorBoundryProps {
-//   children?: any;
-//   fallback?: any;
+// interface Props {
+//   children: ReactNode;
 // }
 
-// class ErrorBoundary extends React.Component<ErrorBoundryProps> {
-//   state = { hasError: false };
+// interface State {
+//   hasError: boolean;
+// }
 
-//   static getDerivedStateFromError(error: Error) {
+// class ErrorBoundary extends Component<Props, State> {
+//   public state: State = {
+//     hasError: false
+//   };
+
+//   public static getDerivedStateFromError(_: Error): State {
+//     // Update state so the next render will show the fallback UI.
 //     return { hasError: true };
 //   }
 
-//   componentDidCatch(error: Error, info: React.ErrorInfo): void {
-//     console.log(error, info);
+//   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+//     console.error("Uncaught error:", error, errorInfo);
 //   }
 
-//   render() {
+//   public render() {
 //     if (this.state.hasError) {
-//       return this.props.fallback;
+//       return <h1>Sorry.. there was an error</h1>;
 //     }
 
 //     return this.props.children;
 //   }
 // }
 
-export default ErrorBoundary;
+
+
+// // interface ErrorBoundryProps {
+// //   children?: any;
+// //   fallback?: any;
+// // }
+
+// // class ErrorBoundary extends React.Component<ErrorBoundryProps> {
+// //   state = { hasError: false };
+
+// //   static getDerivedStateFromError(error: Error) {
+// //     return { hasError: true };
+// //   }
+
+// //   componentDidCatch(error: Error, info: React.ErrorInfo): void {
+// //     console.log(error, info);
+// //   }
+
+// //   render() {
+// //     if (this.state.hasError) {
+// //       return this.props.fallback;
+// //     }
+
+// //     return this.props.children;
+// //   }
+// // }
+
+// export default ErrorBoundary;
