@@ -6,6 +6,8 @@ WORKDIR /app
 
 COPY package.json .
 
+RUN npm install -g typescript
+
 RUN npm install --legacy-peer-deps
 
 RUN npm run build --legacy-peer-deps
