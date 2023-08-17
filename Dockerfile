@@ -5,7 +5,8 @@ ENV NODE_ENV=production
 WORKDIR /app
 
 # COPY package.json .
-
+COPY package.json /app/package.json
+COPY package-lock.json /app/package-lock.json
 COPY . /app
 
 RUN npm install -g typescript
