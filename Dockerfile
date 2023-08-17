@@ -8,9 +8,9 @@ COPY package.json .
 
 RUN npm install -g typescript
 
-RUN npm install --legacy-peer-deps
+RUN npm ci --legacy-peer-deps
 
-RUN npm run build --legacy-peer-deps
+RUN npm run build
 
 COPY . .
 
