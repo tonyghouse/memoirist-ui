@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "serve dist -s -n -L -p $PORT"
+    "start": "serve dist -f -s -n -L -p $PORT"
   },
   "dependencies": {
     "@editorjs/attaches": "^1.3.0",
