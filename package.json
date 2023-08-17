@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "start": "serve dist -s -n -L -p $PORT",
+    "start": "serve dist -s -n -L -l 0.0.0.0 -p $PORT",
     "old2-start": "npx http-server ./dist",
     "old-start": "serve dist -s -n -L -p $PORT"
   },
