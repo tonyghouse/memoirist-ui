@@ -23,6 +23,7 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Link } from "react-router-dom";
 
 function UserMenu() {
   const themeContext = useContext<IThemeContextType>(ThemeContext);
@@ -53,9 +54,15 @@ function UserMenu() {
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Settings</DropdownMenuItem>
-            <DropdownMenuItem>Features</DropdownMenuItem>
+             <Link to="/menu/profile">
+              <DropdownMenuItem>Profile</DropdownMenuItem>
+             </Link>
+             <Link to="/menu/settings">
+              <DropdownMenuItem>Settings</DropdownMenuItem>
+             </Link>
+             <Link to="/menu/features">
+              <DropdownMenuItem>Features</DropdownMenuItem>
+             </Link>
             <DropdownMenuItem onClick={toggleTheme} >
             Theme Mode <button >{themeContext.themeMode ==="dark" ?<RxMoon/>: <RxSun/>}</button>
             </DropdownMenuItem>

@@ -1,9 +1,8 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
 import Templates from "./Templates";
 import SearchPage from "./SearchPage";
 import MomentoMori from "./MomentoMori";
-import MasterLayout from "./MasterLayout";
 
 function NavRoutes() {
   return (
@@ -13,6 +12,7 @@ function NavRoutes() {
         <Route path="momento-mori" element={<MomentoMori />} />
         <Route path="search" element={<SearchPage />} />
       </Routes>
+      <Outlet></Outlet>
     </>
   );
 }

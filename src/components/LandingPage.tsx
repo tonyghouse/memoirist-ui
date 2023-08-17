@@ -3,7 +3,7 @@ import Sidebar from "./Sidebar";
 
 import { ISidebarContextType, SidebarContext } from "@/context/SidebarContext";
 
-function SearchPage() {
+function LandingPage() {
   const sidebarContext = useContext<ISidebarContextType>(SidebarContext);
 
   return (
@@ -14,11 +14,11 @@ function SearchPage() {
         <div
           className="border-border border-[0.12rem] rounded-sm my-2 h-full min-h-[100vh] w-full"
         >
-          SearchPage
+          Landing Page
         </div>
       </div>
     </>
   );
 }
 
-export default SearchPage;
+export default LandingPage;

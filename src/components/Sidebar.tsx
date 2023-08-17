@@ -15,11 +15,13 @@ import {
 
 
 import { IThemeContextType, ThemeContext } from "../context/ThemeContext";
+import { Link } from "react-router-dom";
 
 function Sidebar({ setModuleId }: any) {
   const themeContext = useContext<IThemeContextType>(ThemeContext);
 
   const changeModuleId = (moduleId:string) => {
+    console.log("moduleId: ",moduleId);
     setModuleId(moduleId);
   };
 
@@ -68,7 +70,7 @@ function Sidebar({ setModuleId }: any) {
   return (
     <div
       className={` 
-       border-border border rounded-sm 
+       border-border border-[0.12rem] rounded-sm 
       my-2 mr-2 
 
       h-auto min-h-[100vh] min-w-fit  md:min-w-fit   flex flex-col items-center p-2`}
@@ -86,20 +88,20 @@ function Sidebar({ setModuleId }: any) {
 
       <Separator className="my-4" />
       
-      <div key="momento-mori" onClick={()=>changeModuleId("momento-mori")} 
+      <Link to="/nav/momento-mori"  onClick={()=>changeModuleId("momento-mori")} 
          className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent">
        <GiSandsOfTime className="inline mr-2" /> Momento Mori
-      </div>
+      </Link>
       
-      <div key="templates" onClick={()=>changeModuleId("templates")} 
+      <Link  to="/nav/templates"  onClick={()=>changeModuleId("templates")} 
         className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent">
         <TbTemplate className="inline mr-2" /> Templates
-      </div>
+      </Link>
       
-      <div key="search" onClick={()=>changeModuleId("search")} 
+      <Link  to="/nav/search"  onClick={()=>changeModuleId("search")} 
          className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent">
        <TbDeviceTabletSearch className="inline mr-2" />  Search
-      </div>
+      </Link>
     </div>
   );
 }

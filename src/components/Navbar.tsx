@@ -13,33 +13,34 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import UserMenu from "./UserMenu";
+import { Link, Outlet } from "react-router-dom";
+import { SidebarContext,ISidebarContextType } from "@/context/SidebarContext";
 
-interface INavbarProps {
-  sidebarInd: boolean;
-  setSidebarInd: (value: boolean) => void;
-}
 
-function Navbar({ sidebarInd, setSidebarInd }: INavbarProps) {
+function Navbar() {
   const themeContext = useContext<IThemeContextType>(ThemeContext);
+  const sidebarContext = useContext<ISidebarContextType>(SidebarContext);
+
   const toggleSidebar = () => {
-    setSidebarInd(!sidebarInd);
+    sidebarContext.toggleSidebarInd();
   };
 
   return (
     <>
       <div
         className={` 
-        border-border border rounded-sm 
+        border-border border-[0.12rem] rounded-sm 
         flex flex-row justify-between items-center px-[0.4rem]  py-[0.5rem]`}>
         <div className="flex flex-row justify-start items-center gap-2">
            <BsLayoutSidebar  onClick={toggleSidebar} className="text-sm font-medium leading-none"/>
-           <p className="text-sm font-medium leading-none">Memoirist</p>
+           <Link to="/" className="text-sm font-medium leading-none">Memoirist</Link>
         </div>
 
         <div className="flex flex-row gap-4 items-center">
           <UserMenu/>
         </div>
       </div>
+      <Outlet></Outlet>
     </>
   );
 }
