@@ -1,12 +1,14 @@
 FROM node:18-alpine
 
+ENV NODE_ENV=production
+
 WORKDIR /app
 
 COPY package.json .
 
 RUN npm install --legacy-peer-deps
 
-RUN npm run build
+RUN npm run build --legacy-peer-deps
 
 COPY . .
 
