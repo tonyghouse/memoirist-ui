@@ -72,10 +72,7 @@ export const EDITOR_JS_TOOLS = {
     class:Raw,
     inlineToolbar: true,
   },
-  header: {
-    class:Header,
-    inlineToolbar: true,
-  },
+  header: Header,
   quote: {
     class:Quote,
     inlineToolbar: true,
