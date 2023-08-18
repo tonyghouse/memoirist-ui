@@ -1,11 +1,12 @@
 import React from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
+import UserProfilePage from "./UserProfilePage";
 
-function MenuRoutes() {
+function UserMenuRoutes() {
   return (
     <>
       <Routes>
-        <Route path="profile" element={<div>Profile page</div>} />
+        <Route path="profile" element={<UserProfilePage />}/>
         <Route path="features" element={<div>Feautures page</div>} />
         <Route path="settings" element={<div>Settings page</div>} />
         <Route path="logout" element={<div> Logout Page</div>} />
@@ -15,4 +16,4 @@ function MenuRoutes() {
   );
 }
 
-export default MenuRoutes;
+export default UserMenuRoutes;

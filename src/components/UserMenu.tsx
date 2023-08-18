@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { IThemeContextType, ThemeContext } from "../context/ThemeContext";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { BsLayoutSidebar } from "react-icons/bs";
@@ -24,13 +24,30 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Link } from "react-router-dom";
+import { SignOutButton, useUser } from "@clerk/clerk-react";
+import { UserResource } from "@clerk/types";
 
 function UserMenu() {
   const themeContext = useContext<IThemeContextType>(ThemeContext);
+  const { user } = useUser();
+  useEffect(()=>{
+   console.log("logged in user ",user);
+  },[]);
 
   const toggleTheme = () => {
     themeContext.toggleThemeMode();
   };
+
+  if(!user){
+    return null;
+  }
+
+  function getInitials(user: UserResource): React.ReactNode {
+    if(user.fullName && user.fullName.length >=1){
+      return user.fullName.charAt(0);
+    }
+    return "0"
+  }
 
   return (
     <>
@@ -38,17 +55,17 @@ function UserMenu() {
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="relative h-8 w-8 rounded-full">
             <Avatar className="h-8 w-8">
-              <AvatarImage src="/avatars/01.png" alt="@shadcn" />
-              <AvatarFallback>SU</AvatarFallback>
+              <AvatarImage src={user.imageUrl} alt="@userprofile" />
+              <AvatarFallback>{getInitials(user)}</AvatarFallback>
             </Avatar>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-48" align="end" forceMount>
           <DropdownMenuLabel className="font-normal">
             <div className="flex flex-col space-y-1">
-              <p className="text-sm font-medium leading-none">Super User</p>
+              <p className="text-sm font-medium leading-none">{user.fullName}</p>
               <p className="text-xs leading-none text-muted-foreground">
-                superuser@memoirist.com
+              @{user.username}
               </p>
             </div>
           </DropdownMenuLabel>
@@ -64,11 +81,12 @@ function UserMenu() {
               <DropdownMenuItem>Features</DropdownMenuItem>
              </Link>
             <DropdownMenuItem onClick={toggleTheme} >
-            Theme Mode <button >{themeContext.themeMode ==="dark" ?<RxMoon/>: <RxSun/>}</button>
+            <span className="pr-2">Theme   </span> <button >{themeContext.themeMode ==="dark" ?<RxMoon/>: <RxSun/>}</button>
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
-          <DropdownMenuItem>Log out</DropdownMenuItem>
+           <DropdownMenuItem><SignOutButton/></DropdownMenuItem>
+        
         </DropdownMenuContent>
       </DropdownMenu>
     </>
