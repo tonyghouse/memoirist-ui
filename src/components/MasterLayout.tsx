@@ -18,6 +18,7 @@ import NotFound from "./NotFound";
 
 import { dark,neobrutalism,shadesOfPurple } from "@clerk/themes";
 import { IThemeContextType, ThemeContext } from "@/context/ThemeContext";
+import SignInModal from "./AuthModal";
 
 
 // <Route

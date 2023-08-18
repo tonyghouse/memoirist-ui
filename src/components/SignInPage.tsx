@@ -9,16 +9,13 @@ import {
   UserButton,
   SignInButton,
 } from "@clerk/clerk-react";
+import AuthModal from "./AuthModal";
 
 function SignInPage() {
   return (
     <>
       <div className="flex flex-col justify-center items-center border">
-        {/* <SignIn routing="path" path="/sign-in" /> */}
-        <div className="flex flex-row justify-center items-center  bg-red-500 h-[10vh]">Sign In first bro</div>
-        <SignInButton mode="modal">
-          <button className="btn">Log in/Signup</button>
-        </SignInButton>
+       <AuthModal/>
       </div>
     </>
   );

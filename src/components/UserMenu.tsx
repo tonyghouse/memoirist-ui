@@ -28,15 +28,12 @@ import { SignOutButton, useUser } from "@clerk/clerk-react";
 import { UserResource } from "@clerk/types";
 
 function UserMenu() {
-  const themeContext = useContext<IThemeContextType>(ThemeContext);
   const { user } = useUser();
   useEffect(()=>{
    console.log("logged in user ",user);
   },[]);
 
-  const toggleTheme = () => {
-    themeContext.toggleThemeMode();
-  };
+
 
   if(!user){
     return null;
@@ -80,9 +77,7 @@ function UserMenu() {
              <Link to="/menu/features">
               <DropdownMenuItem>Features</DropdownMenuItem>
              </Link>
-            <DropdownMenuItem onClick={toggleTheme} >
-            <span className="pr-2">Theme   </span> <button >{themeContext.themeMode ==="dark" ?<RxMoon/>: <RxSun/>}</button>
-            </DropdownMenuItem>
+           
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
            <DropdownMenuItem><SignOutButton/></DropdownMenuItem>

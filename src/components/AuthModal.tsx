@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button"
 
 
-function SignInModal() {
+function AuthModal() {
   return (
     <>
       <SignInButton mode="modal">
@@ -13,4 +13,4 @@ function SignInModal() {
   );
 }
 
-export default SignInModal;
+export default AuthModal;
