@@ -6,30 +6,17 @@ import { useEffect } from "react";
 
 function App() {
   useEffect(()=>{
+    const k1 = import.meta.env.VITE_DUMMY_KEY_1;
+    console.log("k1:::  ",k1);
 
+    const k2 = import.meta.env.VITE_DUMMY_KEY_2;
+    console.log("k2:::  ",k2);
 
-    try{
-      const Var1 = import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY;
-      console.log("Var1:::  ",Var1)
-    } catch(e){
-  console.log("error in Var2 ",e)
-    }
+    const k3 = import.meta.env.VITE_DUMMY_KEY_3;
+    console.log("k3:::  ",k3);
 
-    try{
-      const Var2 = import.meta.env.VITE_DUMMY_KEY_ENV_FILE;
-      console.log("Var2:::  ",Var2)
-    } catch(e){
-  console.log("error in Var2 ",e)
-    }
-
-    
-    try{
-      const Var3 = import.meta.env.VITE_DUMMY_KEY_ENV_FILE_EMBED;
-      console.log("Var3:::  ",Var3)
-    } catch(e){
-  console.log("error in Var3 ",e)
-    }
-
+    const k4 = import.meta.env.VITE_DUMMY_KEY_4;
+    console.log("k4:::  ",k4);
 
     
    
