@@ -15,7 +15,8 @@ function App() {
     <>
       <ThemeContextDefaultProvider>
         <SidebarContextDefaultProvider>
-        {/* <ErrorBoundary fallback={<ErrorPage />}> */}
+        <ErrorBoundary >
+        <p>GHOUSE_ENV: {process.env.GHOUSE_ENV}</p>
           <Routes>
             <Route path="/" element={<Navbar />}>
                   <Route index element={<HomeSection />}/>
@@ -24,7 +25,7 @@ function App() {
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
-        {/* </ErrorBoundary> */}
+        </ErrorBoundary>
         </SidebarContextDefaultProvider>
       </ThemeContextDefaultProvider>
     </>
