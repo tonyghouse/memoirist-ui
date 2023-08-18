@@ -1,8 +1,8 @@
-
 import React, { Component, ErrorInfo, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
+  fallback: ReactNode;
 }
 
 interface State {
@@ -11,7 +11,7 @@ interface State {
 
 class ErrorBoundary extends Component<Props, State> {
   public state: State = {
-    hasError: false
+    hasError: false,
   };
 
   public static getDerivedStateFromError(_: Error): State {
@@ -25,14 +25,12 @@ class ErrorBoundary extends Component<Props, State> {
 
   public render() {
     if (this.state.hasError) {
-      return <h1>Sorry.. there was an error</h1>;
+      return this.props.fallback;
     }
 
     return this.props.children;
   }
 }
-
-
 
 // // interface ErrorBoundryProps {
 // //   children?: any;

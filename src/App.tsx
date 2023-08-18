@@ -15,8 +15,8 @@ function App() {
     <>
       <ThemeContextDefaultProvider>
         <SidebarContextDefaultProvider>
-        <ErrorBoundary >
-        <p>GHOUSE_ENV: {process.env.GHOUSE_ENV}</p>
+        <ErrorBoundary fallback={<ErrorPage/>}>
+       
           <Routes>
             <Route path="/" element={<Navbar />}>
                   <Route index element={<HomeSection />}/>
