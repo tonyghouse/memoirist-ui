@@ -16,6 +16,7 @@ function Templates() {
         >
 
          <p>GHOUSE_ENV: {JSON.stringify(import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY)}</p>
+         <p>GHOUSE_ENV: {JSON.stringify(process.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY)}</p>
           Templates
           Templates
         </div>
