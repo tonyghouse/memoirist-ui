@@ -9,62 +9,31 @@ function App() {
 
 
     try{
-      const viteStyledRailwayVar = import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY;
-      console.log("viteStyledRailwayVar:::  ",viteStyledRailwayVar)
+      const Var1 = import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY;
+      console.log("Var1:::  ",Var1)
     } catch(e){
-  console.log("error in viteStyledRailwayVar ",e)
-    }
-
-
-    try{
-    const reactStyledRailwayVar = process.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY;
-    console.log("reactStyledRailwayVar:::  ",reactStyledRailwayVar)
-    } catch(e){
-   console.log("error in reactStyledRailwayVar ",e)
+  console.log("error in Var2 ",e)
     }
 
     try{
-      const envFileViteStyledVar = import.meta.env.DUMMY_KEY_ENV_FILE;
-      console.log("envFileViteStyledVar:::  ",envFileViteStyledVar)
-      } catch(e){
-     console.log("error in envFileViteStyledVar ",e)
-      }
+      const Var2 = import.meta.env.VITE_DUMMY_KEY_ENV_FILE;
+      console.log("Var2:::  ",Var2)
+    } catch(e){
+  console.log("error in Var2 ",e)
+    }
 
-      try{
-        const envFileReactStyledVar = process.env.DUMMY_KEY_ENV_FILE;
-    console.log("envFileReactStyledVar:::  ",envFileReactStyledVar)
-        } catch(e){
-      console.log("error in envFileReactStyledVar ",e)
-        }
-     
-
-        try{
-          const envFileViteStyledVar2 = import.meta.env.VITE_DUMMY_KEY_ENV_FILE;
-          console.log("envFileViteStyledVar2:::  ",envFileViteStyledVar2)
-          } catch(e){
-         console.log("error in envFileViteStyledVar 2",e)
-          }
     
-          try{
-            const envFileReactStyledVar2 = process.env.DUMMY_KEY_ENV_FILE;
-        console.log("envFileReactStyledVar2:::  ",envFileReactStyledVar2)
-            } catch(e){
-          console.log("error in envFileReactStyledVar ",e)
-            }
+    try{
+      const Var3 = import.meta.env.VITE_DUMMY_KEY_ENV_FILE_EMBED;
+      console.log("Var3:::  ",Var3)
+    } catch(e){
+  console.log("error in Var3 ",e)
+    }
 
-            try{
-              const envFileViteStyledVarEmbed = import.meta.env.VITE_DUMMY_KEY_ENV_FILE_EMBED;
-              console.log("envFileViteStyledVarEmbed:::  ",envFileViteStyledVarEmbed)
-              } catch(e){
-             console.log("error in envFileViteStyledVarEmbed",e)
-              }
-        
-              try{
-                const envFileReactStyledVarEmbed = process.env.DUMMY_KEY_ENV_FILE_EMBED;
-            console.log("envFileReactStyledVarEmbed:::  ",envFileReactStyledVarEmbed)
-                } catch(e){
-              console.log("error in envFileReactStyledVarEmbed ",e)
-                }
+
+    
+   
+      
          
    
 
