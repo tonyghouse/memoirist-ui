@@ -31,9 +31,9 @@ function LandingPage() {
             research.
           </p>
           <div className="space-x-4">
-            <Link to="/sign-in" className={cn(buttonVariants({ size: "lg" }))}>
+            {/* <Link to="/sign-in" className={cn(buttonVariants({ size: "lg" }))}>
               Get Started
-            </Link>
+            </Link> */}
             <Link
               to="https://github.com/tonyghouse/memoirist"
               target="_blank"
