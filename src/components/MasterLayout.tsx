@@ -39,10 +39,10 @@ function MasterLayout() {
     const themeContext = useContext<IThemeContextType>(ThemeContext);
 
 
-  // if (!import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY) {
-  //   console.log("key seems to be missing")
-  //   throw new Error("Missing Clerk Auth Publishable Key");
-  // }
+  if (!import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY) {
+    console.log("key seems to be missing")
+    throw new Error("Missing Clerk Auth Publishable Key");
+  }
   const clerkPubKey = import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY;
   const navigate = useNavigate();
 
