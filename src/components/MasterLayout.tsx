@@ -19,21 +19,6 @@ import NotFound from "./NotFound";
 import { dark,neobrutalism,shadesOfPurple } from "@clerk/themes";
 import { IThemeContextType, ThemeContext } from "@/context/ThemeContext";
 import SignInModal from "./AuthModal";
-import { cn } from "@/lib/utils";
-
-
-
-// const fontSans = FontSans({
-//   subsets: ["latin"],
-//   src: "../assets/fonts/CalSans-SemiBold.woff2",
-//   variable: "--font-sans",
-// })
-
-// // Font files can be colocated inside of `pages`
-// const fontHeading = localFont({
-//   src: "../assets/fonts/CalSans-SemiBold.woff2",
-//   variable: "--font-heading",
-// })
 
 function MasterLayout() {
     const themeContext = useContext<IThemeContextType>(ThemeContext);
