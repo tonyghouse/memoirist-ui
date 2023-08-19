@@ -15,9 +15,6 @@ function Templates() {
           className="border-border border-[0.12rem] rounded-sm my-2 h-full min-h-[100vh] w-full"
         >
 
-         <p>GHOUSE_ENV: {JSON.stringify(import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY)}</p>
-         <p>GHOUSE_ENV: {JSON.stringify(process.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY)}</p>
-          Templates
           Templates
         </div>
       </div>

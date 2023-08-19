@@ -5,7 +5,7 @@ import {
 import { SidebarContext } from "./SidebarContext";
 
 const SidebarContextDefaultProvider = (props: any) => {
-  const [sidebarInd, setSidebarInd] = useState<boolean>(false);
+  const [sidebarInd, setSidebarInd] = useState<boolean>(true);
 
   // useEffect(() => {
   //   //shadcn Sidebar changing

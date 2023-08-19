@@ -37,7 +37,7 @@ function App() {
     <>
       <ThemeContextDefaultProvider>
         <SidebarContextDefaultProvider>
-          {/* <MasterLayout /> */}
+          <MasterLayout />
 
         </SidebarContextDefaultProvider>
       </ThemeContextDefaultProvider>

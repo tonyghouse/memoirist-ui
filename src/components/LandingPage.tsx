@@ -6,6 +6,7 @@ import { ISidebarContextType, SidebarContext } from "@/context/SidebarContext";
 import { SignInButton } from "@clerk/clerk-react";
 import Navbar from "./Navbar";
 import { Link } from "react-router-dom";
+import { Separator } from "@radix-ui/react-separator";
 
 function LandingPage() {
   return (
@@ -31,9 +32,9 @@ function LandingPage() {
             research.
           </p>
           <div className="space-x-4">
-            {/* <Link to="/sign-in" className={cn(buttonVariants({ size: "lg" }))}>
+            <Link to="/sign-in" className={cn(buttonVariants({ size: "lg" }))}>
               Get Started
-            </Link> */}
+            </Link>
             <Link
               to="https://github.com/tonyghouse/memoirist"
               target="_blank"
@@ -45,6 +46,7 @@ function LandingPage() {
           </div>
         </div>
       </section>
+      <Separator className="my-4"/>
       <section
         id="features"
         className="container space-y-6 bg-slate-50 py-8 dark:bg-transparent md:py-8 lg:py-12"

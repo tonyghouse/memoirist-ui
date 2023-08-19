@@ -76,11 +76,9 @@ function Sidebar({ setModuleId }: any) {
     >
       {modules.map((val: any) => {
         return (
-            <Button
-              key={val.title}
+            <Button key={val.title}
               onClick={() => changeModuleId(val.title)}
-              variant="ghost"
-              className="border-none w-full font-[350]"
+              variant="link" className=" w-full font-[400] justify-start"
             >
               <LuCalendarDays className="inline mr-2 " />
               {val.title}
@@ -94,26 +92,36 @@ function Sidebar({ setModuleId }: any) {
       <Link
         to="/nav/momento-mori"
         onClick={() => changeModuleId("momento-mori")}
-        className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent"
+        className="w-[95%]"
       >
-        <GiSandsOfTime className="inline mr-2" /> Momento Mori
+       <Button variant="link" className=" w-full font-[400] justify-start">
+       <GiSandsOfTime className="inline mr-1 " />
+              Momento Mori
+       </Button>
       </Link>
 
       <Link
         to="/nav/templates"
         onClick={() => changeModuleId("templates")}
-        className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent"
+        className=" w-[95%]"
       >
-        <TbTemplate className="inline mr-2" /> Templates
+       <Button variant="link" className=" w-full font-[400] justify-start">
+       <TbTemplate className="inline mr-1 " />
+       Templates
+       </Button>
       </Link>
 
       <Link
         to="/nav/search"
         onClick={() => changeModuleId("search")}
-        className="font-Inter w-[95%] rounded-sm px-2 py-1.5 text-sm hover:bg-accent"
+        className=" w-[95%]"
       >
-        <TbDeviceTabletSearch className="inline mr-2" /> Search
+       <Button variant="link" className=" w-full font-[400] justify-start">
+       <TbDeviceTabletSearch className="inline mr-1 " />
+       Search
+       </Button>
       </Link>
+
     </div>
   );
 }

@@ -1,6 +1,5 @@
 FROM node:18.16-alpine
 
-# ENV NODE_ENV=production
 
 WORKDIR /app
 
@@ -17,6 +16,5 @@ RUN npm run build
 COPY . .
 
 EXPOSE 8080
-# required for docker desktop port mapping
 
 CMD ["npm", "start"]

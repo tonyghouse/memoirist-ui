@@ -12,6 +12,7 @@ import Navbar from "./Navbar";
 import UserMenuRoutes from "./UserMenuRoutes";
 import SignInPage from "./SignInPage";
 import LandingPage from "./LandingPage";
+import NotFound from "./NotFound";
 
 function HomeRoutes() {
 
@@ -28,11 +29,12 @@ function HomeRoutes() {
     <>
     <Navbar/>
       <Routes>
-        <Route index element={<HomeSection />} />
-        <Route path="nav/*" element={<NavRoutes />} />
+        <Route path="/" element={<HomeSection />} />
+        <Route path="/nav/*" element={<NavRoutes />} />
         <Route path="/menu/*" element={<UserMenuRoutes />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-      <Outlet/>
+     <Outlet></Outlet>
     </>
   );
 }

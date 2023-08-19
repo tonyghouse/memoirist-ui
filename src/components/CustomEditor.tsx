@@ -84,7 +84,7 @@ function CustomEditor() {
 
   return (
     <>
-    <div className="border rounded-lg w-full h-full ">
+    <div className="border rounded-lg w-full h-full font-mono ">
 {/* 
     <div className ="border w-[30%] absolute z-[3]  text-right">
     <button onClick={toggleReadOnlyMode}>

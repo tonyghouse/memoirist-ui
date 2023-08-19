@@ -19,21 +19,21 @@ import NotFound from "./NotFound";
 import { dark,neobrutalism,shadesOfPurple } from "@clerk/themes";
 import { IThemeContextType, ThemeContext } from "@/context/ThemeContext";
 import SignInModal from "./AuthModal";
+import { cn } from "@/lib/utils";
 
 
-// <Route
-  //   path="/protected"
-  //   element={
-  //     <>
-  //       <SignedIn>
-  //         <ProtectedPage />
-  //       </SignedIn>
-  //       <SignedOut>
-  //         <RedirectToSignIn />
-  //       </SignedOut>
-  //     </>
-  //   }
-  // />
+
+// const fontSans = FontSans({
+//   subsets: ["latin"],
+//   src: "../assets/fonts/CalSans-SemiBold.woff2",
+//   variable: "--font-sans",
+// })
+
+// // Font files can be colocated inside of `pages`
+// const fontHeading = localFont({
+//   src: "../assets/fonts/CalSans-SemiBold.woff2",
+//   variable: "--font-heading",
+// })
 
 function MasterLayout() {
     const themeContext = useContext<IThemeContextType>(ThemeContext);
@@ -47,26 +47,26 @@ function MasterLayout() {
   const navigate = useNavigate();
 
   return (
-    <>
-      <ClerkProvider
+    <ClerkProvider
         publishableKey={clerkPubKey}
         navigate={(to) => navigate(to)}
 
         appearance={{
-            baseTheme: themeContext.themeMode==="dark" ? dark: neobrutalism 
+          baseTheme: themeContext.themeMode==="dark" ? dark: null 
           }}
       >
         <ErrorBoundary fallback={<ErrorPage />}>
+          <div className={"mx-2 my-1 min-h-screen bg-background font-inter "} >
           <Routes>
             <Route path="/sign-in/*" element={<SignInPage />} />
             <Route path="/sign-up/*" element={<SignUpPage />} />
 
             <Route path="/*" element={<HomeRoutes />} />
-            <Route path="*" element={<NotFound />} />
+            
           </Routes>
+         </div>
         </ErrorBoundary>
       </ClerkProvider>
-    </>
   );
 }
 
