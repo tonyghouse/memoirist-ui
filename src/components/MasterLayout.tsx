@@ -25,7 +25,6 @@ function MasterLayout() {
 
 
   if (!import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY) {
-    console.log("key seems to be missing")
     throw new Error("Missing Clerk Auth Publishable Key");
   }
   const clerkPubKey = import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY;
@@ -37,7 +36,10 @@ function MasterLayout() {
         navigate={(to) => navigate(to)}
 
         appearance={{
-          baseTheme: themeContext.themeMode==="dark" ? dark: null 
+          baseTheme: themeContext.themeMode==="dark" ? dark: null ,
+          elements: {
+            formButtonPrimary: 'bg-accent-foreground text-secondary hover:bg-popover-foreground'
+          }
           }}
       >
         <ErrorBoundary fallback={<ErrorPage />}>

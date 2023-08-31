@@ -19,6 +19,7 @@ import { SignInButton, useUser } from "@clerk/clerk-react";
 import AuthModal from "./AuthModal";
 import { Button } from "./ui/button";
 import { Toggle } from "@/components/ui/toggle"
+import TitleBar from "./TitleBar";
 
 
 
@@ -44,16 +45,16 @@ function Navbar() {
         <div className="flex flex-row justify-start items-center gap-2">
 
            <Link to="/" >
-            <Button variant="default" size="lg" className="">Memoirist</Button>
+            <Button variant="default" size="sm" className="">Memoirist</Button>
           </Link>
-          { !(!isLoaded || !isSignedIn) && <Toggle variant="outline" onClick={toggleSidebar} className="">
+          { !(!isLoaded || !isSignedIn) && <Toggle variant="outline" size="sm" onClick={toggleSidebar} className="">
             <BsLayoutSidebar/></Toggle>}
            
         </div>
 
         <div className="flex flex-row gap-4 items-center">
           {(!isLoaded || !isSignedIn) ? <AuthModal/> : <UserMenu/>}
-        <Toggle variant="outline" onClick={toggleTheme} >
+        <Toggle variant="outline" size="sm" onClick={toggleTheme} >
            <button >{themeContext.themeMode ==="dark" ?<RxMoon/>: <RxSun/>}</button>
         </Toggle>
         </div>

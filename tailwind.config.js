@@ -59,7 +59,7 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        mono: ["Roboto Mono", "monospace"],
+        mono: ["FiraCode", "monospace"],
         inter: ["Inter", "sans-serif"]
        
       },

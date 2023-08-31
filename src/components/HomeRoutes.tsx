@@ -20,7 +20,6 @@ function HomeRoutes() {
   const navigate = useNavigate();
 
   if (!isLoaded || !isSignedIn) {
-    console.log("user not signed in");
     // return <RedirectToSignIn />
     return <LandingPage />
   }

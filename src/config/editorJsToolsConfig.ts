@@ -34,6 +34,12 @@ import Tooltip from "editorjs-tooltip";
 // @ts-ignore
 import Paragraph from "@editorjs/paragraph";
 
+// @ts-ignore
+import Marker  from "@editorjs/marker";
+
+// @ts-ignore
+import Underline from '@editorjs/underline';
+
 export const EDITOR_JS_TOOLS = {
   paragraph: {
         class: Paragraph,
@@ -72,7 +78,7 @@ export const EDITOR_JS_TOOLS = {
     class:Raw,
     inlineToolbar: true,
   },
-  header: Header,
+  header:Header,
   quote: {
     class:Quote,
     inlineToolbar: true,
@@ -95,16 +101,12 @@ export const EDITOR_JS_TOOLS = {
   },
   tooltip: {
     class: Tooltip,
-    
-    config: {
-      location: "left",
-      highlightColor: "#FFEFD5",
-      underline: true,
-      backgroundColor: "#154360",
-      textColor: "#FDFEFE",
-      holder: "editorId",
-    },
   },
+  Marker: {
+    class: Marker,
+    shortcut: 'CTRL+SHIFT+M',
+  },
+  underline: Underline,
 };
 
 // const editorJSToolsConfig = {

@@ -50,7 +50,7 @@ function UserMenu() {
     <>
       <DropdownMenu >
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+          <Button variant="ghost" className="relative h-8 w-8 rounded-full ">
             <Avatar className="h-8 w-8 rounded-lg border-border border">
               <AvatarImage src={user.imageUrl} alt="@userprofile" />
               <AvatarFallback>{getInitials(user)}</AvatarFallback>
