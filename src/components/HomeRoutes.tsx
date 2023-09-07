@@ -12,6 +12,7 @@ import Navbar from "./Navbar";
 import UserMenuRoutes from "./UserMenuRoutes";
 import LandingPage from "./LandingPage";
 import NotFound from "./NotFound";
+import SectionRoutes from "./SectionRoutes";
 
 function HomeRoutes() {
   const { isLoaded, isSignedIn, user } = useUser();
@@ -24,6 +25,7 @@ function HomeRoutes() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomeSection />} />
+          <Route path="/section/*" element={<SectionRoutes />} />
           <Route path="/nav/*" element={<NavRoutes />} />
           <Route path="/menu/*" element={<UserMenuRoutes />} />
           <Route path="*" element={<NotFound />} />

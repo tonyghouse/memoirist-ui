@@ -1,16 +1,17 @@
 import { SectionInfo } from "../model/SectionInfo";
 
 const API_URL = import.meta.env.VITE_MEMOIRIST_API_URL;
-export const getEditorContent = (sectionInfo: SectionInfo, cb: any) => {
+export const getEditorContent = (sectionId:String|null|undefined,
+                             sectionDate:String|null|undefined, cb: any) => {
   const url = new URL(`${API_URL}/content`);
   let params={};
 
-  if(sectionInfo.sectionId){
-    params["sectionId"] = sectionInfo.sectionId;
+  if(sectionId){
+    params["sectionId"] = sectionId;
   }
 
-  if(sectionInfo.sectionDate){
-    params["sectionDate"] = sectionInfo.sectionDate;
+  if(sectionDate){
+    params["sectionDate"] = sectionDate;
   }
 
   url.search = new URLSearchParams(params).toString();
@@ -23,20 +24,20 @@ export const getEditorContent = (sectionInfo: SectionInfo, cb: any) => {
 
 export const saveEditorContent = (
   userId: string,
-  sectionInfo: SectionInfo,
+  sectionId:String|null|undefined,
+  sectionDate:String|null|undefined,
   content: any
 ): void => {
   if (!content.blocks) {
     return;
   }
 
-  console.log("saving data to the API sectionInfo: ", sectionInfo);
   const contentsOrder = [];
 
   try {
     const req = {
-      sectionId: sectionInfo.sectionId,
-      sectionDate: sectionInfo.sectionDate,
+      sectionId: sectionId,
+      sectionDate: sectionDate,
       userId: userId,
       blocks: content.blocks,
       contentsOrder: contentsOrder,

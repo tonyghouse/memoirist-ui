@@ -1,7 +1,18 @@
 import React, { useContext } from "react";
 import Sidebar from "./Sidebar";
 
-import { ISidebarContextType, SidebarContext } from "@/context/SidebarContext";
+import { ISidebarContextType, SidebarContext } from "../context/SidebarContext";
+import {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+} from "@/components/ui/command";
 
 function SearchPage() {
   const sidebarContext = useContext<ISidebarContextType>(SidebarContext);
@@ -11,11 +22,24 @@ function SearchPage() {
       <div className="w-full h-full min-h-[100vh] flex flex-row">
         {sidebarContext.sidebarInd && <Sidebar setModuleId={"landingpage"} />}
 
-        <div
-          className="border-border border-[0.12rem] rounded-sm my-2 h-full min-h-[100vh] w-full"
-        >
-          SearchPage ...
-        </div>
+        <Command>
+          <CommandInput placeholder="Type a command or search..." />
+          <CommandList>
+            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandGroup heading="Suggestions">
+              <CommandItem>Today</CommandItem>
+              <CommandItem>Yesterday</CommandItem>
+              <CommandItem>LastWeek</CommandItem>
+              <CommandItem>MostViewed</CommandItem>
+            </CommandGroup>
+            {/* <CommandSeparator />
+            <CommandGroup heading="Settings">
+              <CommandItem>Profile</CommandItem>
+              <CommandItem>Billing</CommandItem>
+              <CommandItem>Settings</CommandItem>
+            </CommandGroup> */}
+          </CommandList>
+        </Command>
       </div>
     </>
   );

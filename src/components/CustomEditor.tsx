@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
  import "./CustomEditor.css";
  import {EDITOR_JS_TOOLS} from "../config/editorJsToolsConfig"
 import {RxPencil2} from "react-icons/rx";
@@ -18,6 +18,9 @@ import {useUser } from "@clerk/clerk-react";
 import { SectionInfo } from "../model/SectionInfo";
 import { Button } from "./ui/button";
 import { Toggle } from "./ui/toggle";
+import { useSearchParams } from "react-router-dom";
+import { ISidebarContextType, SidebarContext } from "@/context/SidebarContext";
+import Sidebar from "./Sidebar";
 
 const defaultData={
   time: (new Date()).getTime(),
@@ -29,7 +32,16 @@ const defaultData={
 	}
   }]};
   
-function CustomEditor({sectionInfo}:any) {
+function CustomEditor() {
+  const [searchParam,setSearchParam]  = useSearchParams({sectionId:null,sectionDate:null});
+  
+  const sidebarContext = useContext<ISidebarContextType>(SidebarContext);
+
+  const sectionId = searchParam.get("sectionId");
+  const sectionDate = searchParam.get("sectionDate");
+  //xonsole.log("sectionId: ",sectionId);
+  //xonsole.log("sectionDate: ",sectionDate);
+
   const isEditorInit = useRef(false);
   const editorJsInstance = useRef<EditorJS | null>();
   const editorContent = useRef({});
@@ -38,12 +50,12 @@ function CustomEditor({sectionInfo}:any) {
   const [data,setData] = useState<any>(defaultData);
 
   useEffect(()=>{
-    const editorContent = getEditorContent(sectionInfo, (res) => {
+    const editorContent = getEditorContent(sectionId,sectionDate, (res) => {
       const dataFromAPI = { blocks: [...res.blocks] };
       
-      // Xconsole.log("data from API:>>>>" , dataFromAPI);
+      // xonsole.log("data from API:>>>>" , dataFromAPI);
       const editorBlocks = dataFromAPI.blocks.length == 0 ?  defaultData : dataFromAPI;
-      // Xconsole.log("editor blocks:>>>>" , editorBlocks);
+      // xonsole.log("editor blocks:>>>>" , editorBlocks);
       setData(editorBlocks);
      
       if(editorJsInstance.current){
@@ -54,13 +66,13 @@ function CustomEditor({sectionInfo}:any) {
 
 
 
-  },[]);
+  },[sectionId,sectionDate]);
 
-  const TIME_MS = 75000;
+  const TIME_MS = 7500;
   useEffect(() => {
    
     const interval = setInterval(() => {
-      saveEditorContent(user.id,sectionInfo,editorContent.current);
+      saveEditorContent(user.id,sectionId,sectionDate,editorContent.current);
     }, TIME_MS);
   
     return () => clearInterval(interval);
@@ -69,7 +81,7 @@ function CustomEditor({sectionInfo}:any) {
   useEffect(() => {
     if (!isEditorInit.current) {
       isEditorInit.current = true;
-      // XConsole.log("Editor JS Instance: ", editorJsInstance.current);
+      // xonsole.log("Editor JS Instance: ", editorJsInstance.current);
       if (!editorJsInstance.current) {
         initEditor();
       }
@@ -77,8 +89,8 @@ function CustomEditor({sectionInfo}:any) {
 
     return () => {
       if (editorJsInstance.current) {
-        saveEditorContent(user.id,sectionInfo,editorContent.current);
-        // XConsole.log("Destroying Editor JS Instance: ", editorJsInstance.current);
+        saveEditorContent(user.id,sectionId,sectionDate,editorContent.current);
+        // xonsole.log("Destroying Editor JS Instance: ", editorJsInstance.current);
         editorJsInstance.current.destroy();
         editorJsInstance.current = null;
       }
@@ -88,7 +100,7 @@ function CustomEditor({sectionInfo}:any) {
 
 
   const initEditor = () => {
-    // XConsole.log("Initing Editor JS ...");
+    // xonsole.log("Initing Editor JS ...");
     const editor = new EditorJS({
       holder: "editorjs",
       logLevel:LogLevels.ERROR,
@@ -119,7 +131,7 @@ function CustomEditor({sectionInfo}:any) {
       data: data,
       onChange: async () => {
         let content = await editor.saver.save();
-        // console.log("saving from editorjs" ,content.blocks);
+        //xonsole.log("saving from editorjs" ,content.blocks);
         editorContent.current = content;
       },
 
@@ -131,7 +143,7 @@ function CustomEditor({sectionInfo}:any) {
   const toggleReadOnlyMode = () =>{
     if(editorJsInstance.current){
       const editor = editorJsInstance.current;
-      console.log("toggle() : ",editor.readOnly.isEnabled);
+      //xonsole.log("toggle() : ",editor.readOnly.isEnabled);
       editor.readOnly.toggle();
     }
   }
@@ -140,7 +152,7 @@ function CustomEditor({sectionInfo}:any) {
     if(editorJsInstance.current){
       const editor = editorJsInstance.current;
       const readMode = editor!.readOnly.isEnabled;
-      console.log("disable() : ",editor.readOnly.isEnabled);
+      //xonsole.log("disable() : ",editor.readOnly.isEnabled);
       if(readMode){
         editor.readOnly.toggle(); 
       }
@@ -150,16 +162,25 @@ function CustomEditor({sectionInfo}:any) {
 
   return (
     <>
-    <div className="flex flex-row w-full border rounded-lg justify-between items-center mb-1">
-          <div className="bold mx-3">{sectionInfo && sectionInfo.sectionTitle}</div>
-         <Toggle onClick={toggleReadOnlyMode}><RxPencil2/></Toggle>
+    <div className="h-full min-h-[100vh] w-full flex flex-row my-2
+     border-border border-[0.12rem] rounded-sm 
+     mr-2 p-2">
+
+    {sidebarContext.sidebarInd && <Sidebar setModuleId={"landingpage"} />}
+    <div className="w-full h-[100vh] border flex flex-col border-border">
+    <div className="flex flex-row w-full border-b-[0.12rem] border-border rounded-none justify-between items-center my-1">
+          <div className="bold mx-3">{sectionDate && sectionDate.toString()}</div>
+          <Toggle onClick={toggleReadOnlyMode}><RxPencil2/></Toggle>
     </div>
-    <div  className="border rounded-lg w-full min-h-[100vh] h-full font-mono font-[400] text-sm z-1 ">
+    <div  className="border rounded-sm w-full min-h-[100vh] h-full font-mono font-[400] text-sm z-1 ">
       <div
         key="editorjs"
         id="editorjs"
         className="w-full h-auto "
       ></div>
+    </div>
+    </div>
+  
     </div>
     </>
   );

@@ -29,10 +29,6 @@ import { UserResource } from "@clerk/types";
 
 function UserMenu() {
   const { user } = useUser();
-  useEffect(()=>{
-   console.log("logged in user ",user);
-  },[]);
-
 
 
   if(!user){
@@ -83,7 +79,9 @@ function UserMenu() {
            
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
-           <DropdownMenuItem><SignOutButton/></DropdownMenuItem>
+           {/* <DropdownMenuItem> */}
+            <SignOutButton/>
+           {/* </DropdownMenuItem> */}
         
         </DropdownMenuContent>
       </DropdownMenu>

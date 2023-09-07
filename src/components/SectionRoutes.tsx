@@ -4,17 +4,18 @@ import Templates from "./Templates";
 import SearchPage from "./SearchPage";
 import MomentoMori from "./MomentoMori";
 import AddNewSection from "./AddNewSection";
+import CustomEditor from "./CustomEditor";
 
-function NavRoutes() {
+function SectionRoutes() {
   
   return (
     <>
     
       <Routes >
      
-        <Route path="templates" element={<Templates />} />
-        <Route path="momento-mori" element={<MomentoMori />} />
-        <Route path="search" element={<SearchPage />} />
+        <Route index element={<CustomEditor />} />
+        <Route path="add-new" element={<AddNewSection />} />
+       
         
       </Routes>
       <Outlet></Outlet>
@@ -22,4 +23,4 @@ function NavRoutes() {
   );
 }
 
-export default NavRoutes;
+export default SectionRoutes;
