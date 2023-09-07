@@ -36,7 +36,7 @@ function MasterLayout() {
         navigate={(to) => navigate(to)}
 
         appearance={{
-          baseTheme: themeContext.themeMode==="dark" ? dark: null ,
+          baseTheme: themeContext.themeMode ==="dark" ? dark: null ,
           elements: {
             formButtonPrimary: 'bg-accent-foreground text-secondary hover:bg-popover-foreground'
           }
