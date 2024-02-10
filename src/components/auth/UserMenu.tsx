@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { IThemeContextType, ThemeContext } from "../context/ThemeContext";
+import { IThemeContextType, ThemeContext } from "../../context/ThemeContext";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { BsLayoutSidebar } from "react-icons/bs";
 import { RxSun, RxMoon } from "react-icons/rx";

@@ -4,12 +4,12 @@ import Templates from "./Templates";
 import SearchPage from "./SearchPage";
 import MomentoMori from "./MomentoMori";
 import HomeSection from "./HomeSection";
-import MenuRoutes from "./UserMenuRoutes";
+import MenuRoutes from "./auth/UserMenuRoutes";
 import NavRoutes from "./NavRoutes";
 
 import {useUser } from "@clerk/clerk-react";
 import Navbar from "./Navbar";
-import UserMenuRoutes from "./UserMenuRoutes";
+import UserMenuRoutes from "./auth/UserMenuRoutes";
 import LandingPage from "./LandingPage";
 import NotFound from "./NotFound";
 import SectionRoutes from "./SectionRoutes";

@@ -40,11 +40,9 @@ function AddNewSection() {
 
   function saveSectionName(): void {
     if(sectionType==="date"){
-      console.log("date of section: ",date);
       saveNewSection(user.id,null, getFormattedDate(date));
       // navigate("/");
     }else{
-      console.log("name of section: ",sectionName);
       saveNewSection(user.id,sectionName,null);
       // navigate("/");
     }

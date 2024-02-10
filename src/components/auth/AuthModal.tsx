@@ -12,7 +12,7 @@ function AuthModal() {
     <>
       <Popover>
         <PopoverTrigger>
-          <Button variant="secondary">Try with demo creds</Button>
+         Try with demo creds
         </PopoverTrigger>
         <PopoverContent>
           <div>
@@ -23,7 +23,7 @@ function AuthModal() {
       </Popover>
 
       <SignInButton mode="modal">
-        <Button variant="outline">SignIn / SignUp</Button>
+        SignIn / SignUp
       </SignInButton>
     </>
   );

@@ -17,7 +17,6 @@ export const saveNewSection = (
     };
 
     postData(`${API_URL}/sections`, req).then((data) => {
-      console.log(data);
     });
   } catch (err) {
     console.error("error while saving new section");

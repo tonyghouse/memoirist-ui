@@ -10,15 +10,15 @@ import {
 } from "@clerk/clerk-react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import ErrorBoundary from "./ErrorBoundary";
-import SignInPage from "./SignInPage";
+import SignInPage from "./auth/SignInPage";
 import ErrorPage from "./ErrorPage";
-import SignUpPage from "./SignUpPage";
+import SignUpPage from "./auth/SignUpPage";
 import HomeRoutes from "./HomeRoutes";
 import NotFound from "./NotFound";
 
 import { dark,neobrutalism,shadesOfPurple } from "@clerk/themes";
 import { IThemeContextType, ThemeContext } from "@/context/ThemeContext";
-import SignInModal from "./AuthModal";
+import SignInModal from "./auth/AuthModal";
 
 function MasterLayout() {
     const themeContext = useContext<IThemeContextType>(ThemeContext);

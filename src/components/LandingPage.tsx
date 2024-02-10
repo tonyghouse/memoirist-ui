@@ -71,7 +71,7 @@ function LandingPage() {
                 width="120px"
                 height="120px"
                 viewBox="0 0 120 120"
-                enable-background="new 0 0 120 120"
+                enableBackground="new 0 0 120 120"
             
               >
                 <polygon points="106.739,41.135 47.711,119.699 61.321,64.439 29.656,64.973 42.59,0 80.997,0 65.58,41.17 " />

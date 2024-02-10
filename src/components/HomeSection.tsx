@@ -31,10 +31,13 @@ function HomeSection() {
         {/* {sidebarContext.sidebarInd && <Sidebar settingSectionInfo={settingSectionInfo} />} */}
 
         <div
-          className={`border-border border-[0.12rem] rounded-sm my-2 h-full min-h-[100vh] w-full `}>
+          className={`border-border border-[0.12rem] h-full min-h-[100vh] w-full `}>
            { sectionInfo && sectionInfo?.sectionTitle ==="add-new" ? 
-               <AddNewSection/> :  
-               <CustomEditor key={sectionInfo.sectionTitle} /> }            
+               <AddNewSection/> : 
+               <CustomEditor
+                key={sectionInfo.sectionTitle} /> 
+               }  
+                       
         
         </div>
 

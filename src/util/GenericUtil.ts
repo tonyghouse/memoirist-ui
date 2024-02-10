@@ -18,6 +18,5 @@ export function getFormattedDate(date:Date) {
 let birthday = moment(d2);
 
     let diff = moment.duration(birthday.diff(currDay));
-    console.log("diff",diff);
     return Math.trunc(diff.asWeeks());
 }

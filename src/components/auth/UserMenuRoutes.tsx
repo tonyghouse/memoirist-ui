@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet, Route, Routes } from "react-router-dom";
 import UserProfilePage from "./UserProfilePage";
-import Features from "./Features";
-import Settings from "./Settings";
+import Features from "../Features";
+import Settings from "../Settings";
 
 function UserMenuRoutes() {
 

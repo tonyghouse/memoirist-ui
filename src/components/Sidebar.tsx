@@ -65,8 +65,8 @@ function Sidebar({ settingSectionInfo }: any) {
   return (
     <div
       className={` 
-       border-border border-[0.12rem] rounded-sm 
-       mr-2 h-auto min-h-[100vh] w-full sm:w-[35%] md:w-[27%] lg:w-[17%]  flex flex-col p-2`}
+       border-border border-[0.12rem] 
+       mr-2 h-auto min-h-[100vh] w-full sm:w-[35%] md:w-[27%] lg:w-[17%]  flex flex-col p-1`}
     >
       <div className="h-auto min-h-[60vh]">
         <Link key="add-new" to="/section/add-new">

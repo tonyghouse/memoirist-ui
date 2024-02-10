@@ -17,8 +17,6 @@ export const getEditorContent = (sectionInfo: SectionInfo, cb: any) => {
 
   // const url = `${API_URL}/content/${sectionInfo.sectionId}`;
 
-  console.log("url:::: ", url.toString());
-
   fetch(url)
     .then((response) => response.json())
     .then((result) => cb(result));
