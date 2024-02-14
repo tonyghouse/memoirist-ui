@@ -32,12 +32,6 @@ function SearchPage() {
               <CommandItem>LastWeek</CommandItem>
               <CommandItem>MostViewed</CommandItem>
             </CommandGroup>
-            {/* <CommandSeparator />
-            <CommandGroup heading="Settings">
-              <CommandItem>Profile</CommandItem>
-              <CommandItem>Billing</CommandItem>
-              <CommandItem>Settings</CommandItem>
-            </CommandGroup> */}
           </CommandList>
         </Command>
       </div>
