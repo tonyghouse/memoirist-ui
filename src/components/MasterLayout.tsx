@@ -43,13 +43,11 @@ function MasterLayout() {
           }}
       >
         <ErrorBoundary fallback={<ErrorPage />}>
-          <div className={"mx-2 my-1 min-h-screen bg-background font-inter "} >
+          <div className={"mx-1 my-1 min-h-screen bg-background font-inter "} >
           <Routes>
             <Route path="/sign-in/*" element={<SignInPage />} />
             <Route path="/sign-up/*" element={<SignUpPage />} />
-
             <Route path="/*" element={<HomeRoutes />} />
-            
           </Routes>
          </div>
         </ErrorBoundary>

@@ -23,6 +23,11 @@ export const saveNewSection = (
   }
 };
 
+
+export const getSectionName =(sectionId: string) : string =>{
+  return "SectionName: ";
+}
+
 // Example POST method implementation:
 async function postData(url = "", data = {}) {
   // Default options are marked with *

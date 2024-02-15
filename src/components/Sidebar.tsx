@@ -65,8 +65,8 @@ function Sidebar({ settingSectionInfo }: any) {
   return (
     <div
       className={` 
-       border-border border-[0.12rem] 
-       mr-2 h-auto min-h-[100vh] w-full sm:w-[35%] md:w-[27%] lg:w-[17%]  flex flex-col p-1`}
+      border-border border-r-[0.1rem]
+       mr-1 h-auto min-h-[100vh] w-full sm:w-[35%] md:w-[25%] lg:w-[16%]  flex flex-col p-[0.2rem]`}
     >
       <div className="h-auto min-h-[60vh]">
         <Link key="add-new" to="/section/add-new">
@@ -93,9 +93,9 @@ function Sidebar({ settingSectionInfo }: any) {
                   variant={
                     selectedSection === val.sectionTitle ? "secondary" : "link"
                   }
-                  className=" w-full font-[400] justify-start"
+                  className="overflow-hidden whitespace-no-wrap overflow-ellipsis w-full font-[400] justify-start"
                 >
-                  <LuCalendar className="inline mr-2 " />
+                  {/* <LuCalendar className="inline mr-2 " /> */}
                   {val.sectionTitle}
                 </Button>
               </Link>

@@ -13,7 +13,6 @@ function App() {
         <SidebarContextDefaultProvider>
           <MasterLayout />
           <Toaster />
-
         </SidebarContextDefaultProvider>
       </ThemeContextDefaultProvider>
     </>

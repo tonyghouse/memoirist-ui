@@ -22,6 +22,7 @@ import { Toggle } from "./ui/toggle";
 import { useSearchParams } from "react-router-dom";
 import { ISidebarContextType, SidebarContext } from "@/context/SidebarContext";
 import Sidebar from "./Sidebar";
+import { getSectionName } from "@/service/SectionService";
 
 const defaultData = {
   time: (new Date()).getTime(),
@@ -189,13 +190,13 @@ function CustomEditor() {
 
   return (
     <>
-      <div className="h-full min-h-[100vh] w-full flex flex-row 
+      <div className="border-border border-t-[0.1rem]   h-full min-h-[100vh] w-full flex flex-row 
      mr-1 p-1">
 
         {sidebarContext.sidebarInd && <Sidebar setModuleId={"landingpage"} />}
-        <div className="w-full h-[100vh] border flex flex-col border-border">
-          <div className="flex flex-row w-full border-b-[0.12rem] border-border rounded-none justify-between items-center my-1">
-            <div className="bold mx-3">{ sectionDate && sectionDate.toString()}</div>
+        <div className=" w-full h-[100vh] flex flex-col ">
+          <div className="flex flex-row w-full  rounded-none justify-between items-center my-1">
+            <div className="bold mx-3">{ getTitleOfPage()}</div>
             {/* <Toggle onClick={toggleReadOnlyMode}><RxPencil2/></Toggle> */}
           </div>
 
@@ -206,7 +207,7 @@ function CustomEditor() {
         )}
 
 
-          <div className="w-full min-h-[100vh] h-full font-mono font-[400] text-sm z-1 ">
+          <div className=" w-full min-h-[100vh] h-full font-mono font-[400] text-sm z-1 ">
             <div
               key="editorjs"
               id="editorjs"
@@ -218,6 +219,10 @@ function CustomEditor() {
       </div>
     </>
   );
+
+  function getTitleOfPage(): React.ReactNode {
+      return getSectionName(sectionId);
+  }
 }
 
 export default CustomEditor;

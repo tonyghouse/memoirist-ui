@@ -31,7 +31,7 @@ function HomeSection() {
         {/* {sidebarContext.sidebarInd && <Sidebar settingSectionInfo={settingSectionInfo} />} */}
 
         <div
-          className={`border-border border-[0.12rem] h-full min-h-[100vh] w-full `}>
+          className={`h-full min-h-[100vh] w-full `}>
            { sectionInfo && sectionInfo?.sectionTitle ==="add-new" ? 
                <AddNewSection/> : 
                <CustomEditor

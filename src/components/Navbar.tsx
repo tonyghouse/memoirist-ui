@@ -40,7 +40,7 @@ function Navbar() {
     <>
       <div
         className={` 
-        border-border border-[0.12rem]
+        
         flex flex-row justify-between items-center px-[0.4rem]  py-[0.5rem]`}>
         <div className="flex flex-row justify-start items-center gap-2">
 

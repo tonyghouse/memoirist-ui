@@ -50,9 +50,9 @@ function AddNewSection() {
 
   return (
     <>
-      <div className="w-full h-full min-h-[100vh] flex flex-row my-2">
+      <div className=" border-red-500 border-r-2 w-full h-full min-h-[100vh] flex flex-row my-2">
         {sidebarContext.sidebarInd && <Sidebar setModuleId={"landingpage"} />}
-        <div className="flex flex-col h-[100vh] w-full border-border border ">
+        <div className="flex flex-col h-[100vh] w-full ">
           <div className="bold text-lg p-4 w-full">Add New Date / Section</div>
           <div className="flex flex-row gap-3 mx-3">
          
