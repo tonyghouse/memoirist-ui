@@ -7,7 +7,7 @@ export default function LaunchSoon() {
       <div className="mx-auto max-w-md text-center">
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">memoirist</h1>
         <p className="mt-4 text-muted-foreground">
-          Capture your life's moments and share them with the world. Preserve your memories and connect with loved ones.
+          Capture your life moments and share them with the world. Preserve your memories and connect with loved ones.
         </p>
         <div className="mt-6 space-y-4">
           <form className="flex gap-2">
@@ -15,7 +15,7 @@ export default function LaunchSoon() {
             <Button type="submit">Notify Me</Button>
           </form>
           <p className="text-xs text-muted-foreground">
-            We'll let you know as soon as we launch the app and share more details.
+            We will let you know as soon as we launch the app and share more detail
           </p>
         </div>
       </div>
